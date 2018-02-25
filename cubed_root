@@ -1,0 +1,52 @@
+"""
+I was confused about some code from my course.
+The code in question was to find an approximate cube root of any positive number.
+Here's that code:
+"""
+
+cube = 27
+guess = 0
+epsilon = 0.01
+increment = 0.001
+num_guesses = 0
+
+while abs((guess ** 3) - cube) >= epsilon and guess <= cube:
+	# This is where my issue is
+	guess += increment
+	num_guesses += 1
+print('num_guesses =', num_guesses)
+if abs((guess ** 3) - cube) >= epsilon:
+	print('Failed on cube root of', cube)
+else:
+	print(guess, 'is close to the cube root of', cube)
+
+"""
+My issue was with the first line, which uses abs() and creates an infinite loop.
+Because the increment can 'step over' the range of epsilon, the stopping point
+'and guess <= cube' has to be added (the only good stopping point).
+This can extend the loop quite a long way, and I thought it could be rewritten:
+"""
+
+while cube - (guess ** 3) >= epsilon:
+	# check = cube - (guess ** 3)
+	# print(str(cube), '-', str(guess ** 3), '=', check)
+	guess += increment
+	num_guesses += 1
+print('num_guesses =', num_guesses)
+if abs(cube - (guess ** 3)) >= epsilon:
+	# check = cube - (guess ** 3)
+	# print(str(cube), '-', str(guess ** 3), '=', check)
+	print('Failed on cube root of', cube)
+else:
+	# check = cube - (guess ** 3)
+	# print(str(cube), '-', str(guess ** 3), '=', check)
+	print(guess, 'is close to the cube root of', cube)
+	
+"""
+I put some print commands in there so you can see what happens at each loop.
+As far as I can tell, this does the same thing without any fear of a loop.
+If the first line is > epsilon, guess += increment.
+If it is less than, move on to the next checks, regardless of positive or negative.
+The next lines check if the value falls within epsilon's range.
+Am I wrong?
+"""
