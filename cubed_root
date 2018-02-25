@@ -7,7 +7,7 @@ Here's that code:
 cube = 27
 guess = 0
 epsilon = 0.01
-increment = 0.001
+increment = 0.01
 num_guesses = 0
 
 while abs((guess ** 3) - cube) >= epsilon and guess <= cube:
@@ -22,8 +22,8 @@ else:
 
 """
 My issue was with the first line, which uses abs() and creates an infinite loop.
-Because the increment can 'step over' the range of epsilon, the stopping point
-'and guess <= cube' has to be added (the only good stopping point).
+Because the increment can 'step over' the range of epsilon if increment >= epsilon, 
+the stopping point 'and guess <= cube' has to be added (the only good stopping point).
 This can extend the loop quite a long way, and I thought it could be rewritten:
 """
 
