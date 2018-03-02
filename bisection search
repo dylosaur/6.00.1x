@@ -1,0 +1,55 @@
+def printResults():
+    print('')
+    print('Guess #' + str(numGuesses))
+    print('low =', str(low))
+    print('high =', str(high))
+    print('mid =', str(mid))
+    print('')
+    print(str(mid), '** 2 =', str(mid ** 2))
+    print('abs(' + str(mid ** 2), '-',
+          str(x) + ')', '=', str(abs((mid ** 2) - x)))
+
+
+def printMiddle():
+    printResults()
+    print(str(abs((mid ** 2) - x)), '>=', str(epsilon))
+    print('')
+    if mid ** 2 < x:
+        print(str(mid ** 2), '<', str(x))
+        print('Too low, low changed to mid value (' + str(mid) + ')')
+    else:
+        print(str(mid ** 2), '>=', str(x))
+        print('Too high, high changed to mid value (' + str(mid) + ')')
+    print('__________________________________________________')
+
+
+def printFinal():
+    print('')
+    print('An answer has been found!')
+    printResults()
+    print(str(abs((mid ** 2) - x)), '<', str(epsilon))
+    print('')
+    print(str(mid), 'is close to cube root of', str(x))
+    print('numGuesses =', str(numGuesses))
+
+
+"""
+Main code starts here.
+"""
+
+x = 28384950506849606576897058483
+epsilon = 0.01
+numGuesses = 1
+low = 0
+high = x
+mid = (high + low) / 2.0
+
+while abs((mid ** 2) - x) >= epsilon:
+    printMiddle()
+    numGuesses += 1
+    if mid ** 2 < x:
+        low = mid
+    else:
+        high = mid
+    mid = (high + low) / 2.0
+printFinal()
