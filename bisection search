@@ -29,7 +29,7 @@ def printFinal():
     printResults()
     print(str(abs((mid ** 2) - x)), '<', str(epsilon))
     print('')
-    print(str(mid), 'is close to cube root of', str(x))
+    print(str(mid), 'is close to square root of', str(x))
     print('numGuesses =', str(numGuesses))
 
 
