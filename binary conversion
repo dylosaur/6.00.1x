@@ -1,0 +1,48 @@
+"""
+Here's this code the Professor showed to convert a number to binary.
+Questions are comments.
+"""
+
+num = 19
+
+if num < 0:
+	isNeg = True
+	num = abs(num)
+else:
+	isNeg = False
+result = ''
+if num == 0:
+	result = '0'
+while num > 0:
+	result = str(num % 2) + result
+	num = num // 2
+if isNeg:
+	result = '-' + result
+
+"""
+1. This is for two's complement representation.  But the Professor never talked about how many bits.
+Online I see so many people talking about '5-bit representation' or '8-bit representation' or
+'16-bit representation', etc.  What does Python do internally?  Do all of those designations just matter
+to whatever I'm coding specifically? i.e. sometimes I'd need 8-bit and sometimes I'd need 64?
+
+Something I read suggested that Python doesn't have a limit internally, and is only limited by the
+hardware of the machine it's working on.  That was talking about integers, though.  The TA said this
+about floats and the link he included made absolutely no sense to me:
+
+'There is a system & python implementation based limit on floating point accuracy.
+
+You can dig in for more information here
+
+https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex'
+
+2. A post on stackoverflow I read said that Python's arbitrary length integer type uses a sign-
+magnitude internal format.  I assume this is kind of different than two's complement?
+
+3.  I was initially confused about the fact that the Professor's code just slaps a '-' on the front
+of the positive number's binary.  When I looked up -19 online, it was totally different binary than
+19.  But then I read on that same stackoverflow post that because there's no length associated with
+integers, it's impossible to tell whether a number is positive or negative.  Not a real two's complement
+representation.  So functions like bin() just do what the Professor's code does to make this simpler.
+Am I understanding that right?  How does this apply to negative floats converted to binary?
+
+4. Is any of this information really important to me or is it all theoretical?
