@@ -46,3 +46,4 @@ representation.  So functions like bin() just do what the Professor's code does 
 Am I understanding that right?  How does this apply to negative floats converted to binary?
 
 4. Is any of this information really important to me or is it all theoretical?
+"""
