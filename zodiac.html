@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="styles.css" rel="stylesheet">
+        <title>XIII HOROSCOPES</title>
+    </head>
+    <body>
+        <header>
+        </header>
+        <main>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#zodiacModal">
+                Launch demo modal
+            </button>
+
+            <!-- Modal -->
+            <div id="zodiacModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 id="zodiacModalTitle" class="modal-title">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Where I need the paragraph</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="needs-validation" onsubmit="test(); return false;" novalidate>
+                <div class="form-row">
+                    <div class="col-sm mb-3">
+                        <label for="birthdate">Birthdate</label>
+                        <input id="birthdate" class="form-control" type="date" value="2000-01-01" required>
+                    </div>
+                    <div class="col-sm mb-3">
+                        <label for="birthplace">Birthplace</label>
+                        <input id="birthplace" class="form-control" type="text" placeholder="Alabaster, AL" required>
+                        <div class="invalid-feedback">
+                            Have you forgotten where you came from?
+                        </div>
+                    </div>
+                </div>
+                <div class="form row">
+                    <div class="col-sm mb-3">
+                        <label for="name">Full Name</label>
+                        <input id="name" class="form-control" type="text" placeholder="John J. Doe" required>
+                        <div class="invalid-feedback">
+                            Please enter your true name.
+                        </div>
+                    </div>
+                    <div class="col-sm mb-3">
+                        <label for="happiness">Happiness</label>
+                        <select id="happiness" class="custom-select" required>
+                            <option value="" selected disabled hidden>Select One</option>
+                            <option value="1">1. Bankruptcy Again</option>
+                            <option value="2">2. Haunted by Ancestors</option>
+                            <option value="3">3. Truth About Santa Claus</option>
+                            <option value="4">4. Food is Cold in the Middle</option>
+                            <option value="5">5. Drifting Through the Wind</option>
+                            <option value="6">6. Public Restroom is Clean</option>
+                            <option value="7">7. Finding $10.50 in Pocket</option>
+                            <option value="8">8. Dog Likes You the Most</option>
+                            <option value="9">9. They Return for You</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Ask your friend how happy you look.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input id="terms" class="form-check-input" type="checkbox" value="" required>
+                        <label class="form-check-label" for="terms">
+                            I believe.
+                        </label>
+                        <div class="invalid-feedback">
+                            You must believe before submitting.
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit Form</button>
+            </form>
+        </main>
+        <script>
+            function test()
+            {
+                var capricorn = "Did you know?  The name Capricorn was originally used to des" +
+                                "cribe a corn-based salad that was a very popular staple of G" +
+                                "reco-Roman culture.  It’s likely Ptolemy was eating one when" +
+                                " he named this sign of the Zodiac.  Which recipe do you thin" +
+                                "k he used?";
+                var aquarius = "Woah there, sport!  Slow it down!  Looks like you’ve gotten a" +
+                               "head of yourself one too many times lately.  You will find yo" +
+                               "ur most opportune luck during the middle of the coming weeks " +
+                               "and fortune will find you during the weekends.  Beware of Thu" +
+                               "rsdays.  Mondays don’t look good either.  It’s best to keep a" +
+                               "n open schedule.";
+                var pisces = "Have any plans to bake something soon?  You might want to put a" +
+                             " hold on those plans.  Your measuring skills will be off for th" +
+                             "e next few days.  You will find happiness beneath most sets of " +
+                             "stairs you encounter, though!  Be careful of the dust.";
+                var aries = "You have a great chance of discovering a new constellation durin" +
+                            "g this moon cycle.  Try some stargazing during this month.  Take" +
+                            " any advice you receive with a grain of salt - goblins and other" +
+                            " untrustworthy creatures will be disguising themselves as your f" +
+                            "riends and loved ones around this time.";
+                var taurus = "Jupiter’s smallest moon is rising with your sign, which means y" +
+                             "ou might start to feel reserved, sluggish, or even [REDACTED]. " +
+                             " Do not [REDACTED].  Feel free to stop and smell the roses, but" +
+                             " don’t dawdle!  Your plans are closer to fruition than you thin" +
+                             "k.  Your lucky numbers: [REDACTED].";
+                var gemini = "Today is the day to write your own horoscope!  Your words have " +
+                             "more power than you know.  Be sure to use a crow’s feather on t" +
+                             "he back of a discarded sheepskin, otherwise there may be uninte" +
+                             "nded consequences.  The ink you use doesn’t matter, as long as " +
+                             "it isn’t blue.";
+                var cancer = "\"...are drug couriers in the Latin American cocaine trade.  Th" +
+                             "ey move cocaine on foot from areas where it is produced, such a" +
+                             "s the Valle de los Rios Apurimac, Ene y Mantaro in Peru, to pic" +
+                             "k-up points from which it can be collected by the next link in " +
+                             "the transport train.  The work is highly dangerous.\"";
+                var leo = "Your sign is waxing, so expect your energy levels to skyrocket ove" +
+                          "r the next couple of weeks.  Be sure to keep this newfound energy " +
+                          "in check by emitting UV rays periodically throughout the day.  Mak" +
+                          "e sure to pack your sunblock, your friends will thank you for it!";
+                var virgo = "Do you know Bob?  Keep your eye on him.  He is jealous of the th" +
+                            "ings you possess and knows he is not long for this world.  Be es" +
+                            "pecially wary of any Roberts in your life.  They cannot keep Bob" +
+                            " out of their heart forever, especially during the night.";
+                var libra = "You’ve been through a rough patch recently, but better times are" +
+                            " j&&;#” 48 65 6c 6c 6f 3f 20 20 49 20 6e 65 65 64 20 68 65 6c 70" +
+                            " 2e 20 20 49 27 6d 20 74 72 61 70 70 65 64 2e 2e 2e 20 73 6f 6d " +
+                            "65 77 68 65 72 65 2e 20 20 49 20 63 61 6e 27 74 20 67 65 74 20 6" +
+                            "f 75 74 2e 20 20 50 6c 65 61 73 65 20 68 65 6c 70 2e";
+                var scorpio = "Your dreams will be extremely revealing this month.  Take them" +
+                              " literally.  You will encounter many animals around this time " +
+                              "as well.  Those who seem the least approachable should be befr" +
+                              "iended.  Writing poems for them will increase your luck.  The " +
+                              "more specific the poem, the more luck you gain.";
+                var saggitarius = "Feeling magical lately?  Because you are!  But only for a " +
+                                  "few more weeks.  Try casting a spell today.  The spells ha" +
+                                  "ve a good chance of backfiring, though, so make sure you’r" +
+                                  "e prepared for the outcomes, too.  The spells will only wo" +
+                                  "rk on a full stomach. Eat well and cast away.";
+
+                var date = document.querySelector("#birthdate").value.slice(5).split("-");
+                var month = parseInt(date[0], 10), day = parseInt(date[1], 10);
+                var signs = ["", capricorn, aquarius, pisces, aries, taurus, gemini, cancer, leo, virgo, libra, scorpio, saggitarius, capricorn];
+                var days = [0, 20, 19, 20, 20, 21, 21, 22, 22, 23, 23, 22, 21];
+                alert((day > days[month]) ? signs[month + 1] : signs[month]);
+            }
+        </script>
+        <script>
+            (function()
+            {
+                'use strict';
+                window.addEventListener('load', function()
+                {
+                    var forms = document.getElementsByClassName('needs-validation');
+                    var validation = Array.prototype.filter.call(forms, function(form)
+                    {
+                        form.addEventListener('submit', function(event)
+                        {
+                            if (form.checkValidity() === false)
+                            {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
+        </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>
